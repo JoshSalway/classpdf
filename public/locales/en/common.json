@@ -168,19 +168,7 @@
     "weKeep": "We keep",
     "yourInfoSafe": "your information safe",
     "byFollowingStandards": "by following global security standards.",
-    "processingLocal": "All the processing happens locally on your device.",
-    "gdpr": {
-      "title": "GDPR compliance",
-      "description": "Protects the personal data and privacy of individuals within the European Union."
-    },
-    "ccpa": {
-      "title": "CCPA compliance",
-      "description": "Gives California residents rights over how their personal information is collected, used, and shared."
-    },
-    "hipaa": {
-      "title": "HIPAA compliance",
-      "description": "Sets safeguards for handling sensitive health information in the United States healthcare system."
-    }
+    "processingLocal": "All the processing happens locally on your device."
   },
   "faq": {
     "title": "Frequently Asked",
@@ -198,10 +186,6 @@
       "question": "Does it work on Mac, Windows, and Mobile?",
       "answer": "Yes! Since ClassPDF runs entirely in your browser, it works on any operating system with a modern web browser, including Windows, macOS, Linux, iOS, and Android."
     },
-    "gdprCompliant": {
-      "question": "Is ClassPDF GDPR compliant?",
-      "answer": "Yes. ClassPDF is fully GDPR compliant. Since all file processing happens locally in your browser and we never collect or transmit your files to any server, we have no access to your data. This ensures you are always in control of your documents."
-    },
     "dataStorage": {
       "question": "Do you store or track any of my files?",
       "answer": "No. We never store, track, or log your files. Everything you do on ClassPDF happens in your browser memory and disappears once you close the page. There are no uploads, no history logs, and no servers involved."
@@ -216,7 +200,7 @@
     },
     "analytics": {
       "question": "Do you use cookies or analytics to track me?",
-      "answer": "We care about your privacy. ClassPDF does not track personal information. We use Simple Analytics solely to see anonymous visit counts. This means we can know how many users visit our site, but we never know who you are. Simple Analytics is fully GDPR-compliant and respects your privacy."
+      "answer": "We care about your privacy. ClassPDF runs entirely in your browser, so your files are never uploaded or stored, and we do not track personal information."
     }
   },
   "testimonials": {
