@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const LOCALES_DIR = path.resolve(__dirname, '../public/locales');
-const SITE_URL = (process.env.SITE_URL || 'https://www.bentopdf.com').replace(
+const SITE_URL = (process.env.SITE_URL || 'https://classpdf.com').replace(
   /\/+$/,
   ''
 );
@@ -80,15 +80,10 @@ function injectOrganizationLd(document) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'BentoPDF',
+    name: 'ClassPDF',
     url: SITE_URL,
     logo: `${SITE_URL}/images/favicon.svg`,
-    sameAs: [
-      'https://github.com/alam00000/bentopdf',
-      'https://x.com/BentoPDF',
-      'https://www.linkedin.com/company/bentopdf/',
-      'https://www.instagram.com/thebentopdf/',
-    ],
+    sameAs: ['https://github.com/JoshSalway/classpdf'],
   };
   const script = document.createElement('script');
   script.setAttribute('type', 'application/ld+json');
@@ -109,12 +104,12 @@ function injectToolBreadcrumb(document, lang, toolName, toolUrl) {
   const nav = document.createElement('nav');
   nav.setAttribute('aria-label', 'Breadcrumb');
   nav.setAttribute(BREADCRUMB_MARKER, '');
-  nav.className = 'text-sm text-gray-400 mb-4';
+  nav.className = 'text-sm text-slate-500 mb-4';
 
   const homeLink = document.createElement('a');
   homeLink.href = homeUrl;
-  homeLink.className = 'hover:text-indigo-300';
-  homeLink.textContent = 'BentoPDF';
+  homeLink.className = 'hover:text-green-700';
+  homeLink.textContent = 'ClassPDF';
 
   const sep = document.createElement('span');
   sep.setAttribute('aria-hidden', 'true');
@@ -122,7 +117,7 @@ function injectToolBreadcrumb(document, lang, toolName, toolUrl) {
   sep.textContent = '›';
 
   const current = document.createElement('span');
-  current.className = 'text-gray-300';
+  current.className = 'text-slate-500';
   current.setAttribute('aria-current', 'page');
   current.textContent = toolName;
 
@@ -139,7 +134,7 @@ function injectToolBreadcrumb(document, lang, toolName, toolUrl) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'BentoPDF',
+        name: 'ClassPDF',
         item: homeUrl,
       },
       {
@@ -192,7 +187,7 @@ function processFileForLanguage(
     title =
       tools[translationKey].pageTitle ||
       (tools[translationKey].name
-        ? `${tools[translationKey].name} - BentoPDF`
+        ? `${tools[translationKey].name} - ClassPDF`
         : null);
     description = tools[translationKey].subtitle;
   }
