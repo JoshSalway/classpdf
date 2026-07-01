@@ -1,8 +1,18 @@
-# ClassPDF - fork notes & deploy
+# ClassPDF - build & deploy
 
-ClassPDF is a rebranded fork of [BentoPDF](https://github.com/alam00000/bentopdf)
-(AGPL-3.0). It is a 100% client-side PDF toolkit - no server, no uploads, no
-tracking of file contents. Upstream LICENSE and attribution are kept intact.
+ClassPDF is a rebranded distribution of
+[BentoPDF](https://github.com/alam00000/bentopdf) (AGPL-3.0), kept in a
+**private** repo. It is a 100% client-side PDF toolkit - no server, no uploads,
+no tracking of file contents. Upstream LICENSE and attribution are kept intact.
+
+## AGPL-3.0 compliance (private repo)
+
+A private repo alone does NOT satisfy AGPL-3.0 §13, which requires that users of
+the deployed network app can obtain the Corresponding Source. So the deployed
+site ships a **`/source.zip`** archive of the exact built source, linked from the
+footer ("Download source code") of every page, plus `SOURCE.md`. When
+redeploying, always regenerate `dist/source.zip` (see the deploy steps below) so
+it matches the running version.
 
 ## Rebrand config (build-time env vars)
 
@@ -52,6 +62,16 @@ team behind SproutSheets, free printable worksheets for teachers.").
 ## Deploy to Cloudflare Pages
 
 ```bash
+# 1. Build (see env exports above)
+npm run build
+
+# 2. AGPL source archive of the committed source -> served at /source.zip
+git archive --format=zip -o dist/source.zip HEAD
+
+# 3. Drop the two >25 MiB LibreOffice binaries (Pages per-file cap)
+rm -f dist/libreoffice-wasm/soffice.wasm.gz dist/libreoffice-wasm/soffice.data.gz
+
+# 4. Deploy (first time only: create the project)
 env -u CLOUDFLARE_API_TOKEN npx wrangler pages project create classpdf --production-branch=main
 env -u CLOUDFLARE_API_TOKEN npx wrangler pages deploy dist --project-name=classpdf --branch=main --commit-dirty=true
 ```
