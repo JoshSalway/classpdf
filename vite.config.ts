@@ -566,7 +566,7 @@ export default defineConfig(() => {
           privacy: resolve(__dirname, 'privacy.html'),
           terms: resolve(__dirname, 'terms.html'),
           licensing: resolve(__dirname, 'licensing.html'),
-          source: resolve(__dirname, 'source.html'),
+          attribution: resolve(__dirname, 'attribution.html'),
           tools: resolve(__dirname, 'tools.html'),
           '404': resolve(__dirname, '404.html'),
           // Category Hub Pages
