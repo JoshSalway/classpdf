@@ -726,3 +726,128 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none; /* Chrome, Safari, Edge */
   margin: 0;
 }
+
+/* ============================================================
+   ClassPDF light + teacher-green theme
+   White/light base, dark text, one friendly green accent used
+   only on the logo, primary buttons and hover/focus states.
+   Overrides the upstream dark (gray/indigo) styling consistently
+   in one place rather than per-element.
+   ============================================================ */
+:root {
+  --cp-accent: #16a34a;        /* green-600 */
+  --cp-accent-hover: #15803d;  /* green-700 */
+  --cp-accent-soft: #dcfce7;   /* green-100 */
+  --cp-ink: #0f172a;           /* slate-900 */
+  --cp-muted: #64748b;         /* slate-500 */
+  --cp-line: #e5e7eb;          /* gray-200 */
+  --cp-surface: #ffffff;
+  --cp-bg: #f8fafc;            /* slate-50 */
+}
+
+html,
+body {
+  background-color: var(--cp-bg) !important;
+  color: var(--cp-ink) !important;
+}
+
+/* Base surfaces (nav, footer, cards, panels) -> white on light */
+.bg-gray-900,
+.bg-gray-850,
+.bg-gray-800,
+.bg-gray-700,
+.bg-gray-600 {
+  background-color: var(--cp-surface) !important;
+}
+nav.bg-gray-800 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+/* Borders -> light hairlines */
+.border-gray-800,
+.border-gray-700,
+.border-gray-600,
+.border-gray-300 {
+  border-color: var(--cp-line) !important;
+}
+
+/* Text: white/near-white -> ink; muted grays -> slate */
+.text-white {
+  color: var(--cp-ink) !important;
+}
+.text-gray-200,
+.text-gray-300,
+.text-gray-400,
+.text-gray-500,
+.text-gray-600 {
+  color: var(--cp-muted) !important;
+}
+
+/* Accent: remap indigo -> teacher green (logo, links, primary) */
+.text-indigo-200,
+.text-indigo-300,
+.text-indigo-400 {
+  color: var(--cp-accent) !important;
+}
+.hover\:text-indigo-300:hover,
+.hover\:text-indigo-400:hover {
+  color: var(--cp-accent-hover) !important;
+}
+.bg-indigo-500,
+.bg-indigo-600 {
+  background-color: var(--cp-accent) !important;
+}
+.bg-indigo-900 {
+  background-color: var(--cp-accent-soft) !important;
+}
+.hover\:bg-indigo-700:hover {
+  background-color: var(--cp-accent-hover) !important;
+}
+.border-indigo-400 {
+  border-color: var(--cp-accent) !important;
+}
+.focus\:ring-indigo-500:focus,
+.focus\:ring-indigo-800:focus {
+  --tw-ring-color: var(--cp-accent) !important;
+}
+
+/* Nav brand (logo text) uses the accent */
+#nav-brand a,
+#nav-brand {
+  color: var(--cp-accent) !important;
+}
+
+/* Tool cards: clean white with subtle border + green hover */
+.tool-card {
+  background-color: var(--cp-surface) !important;
+  border: 1px solid var(--cp-line) !important;
+  color: var(--cp-ink) !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.tool-card:hover {
+  border-color: var(--cp-accent) !important;
+  box-shadow: 0 10px 20px -6px rgba(22, 163, 74, 0.18) !important;
+}
+
+/* Search box + inputs on light */
+#search-bar,
+input[type='text'],
+input[type='search'] {
+  background-color: var(--cp-surface) !important;
+  border-color: var(--cp-line) !important;
+  color: var(--cp-ink) !important;
+}
+
+/* Category headers / dividers */
+.category-header {
+  color: var(--cp-ink) !important;
+}
+.section-divider {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--cp-line),
+    transparent
+  ) !important;
+}
