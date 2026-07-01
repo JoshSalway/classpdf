@@ -1,130 +1,27 @@
 {{#if simpleMode}} {{> footer-simple}} {{else}}
-<footer class="mt-16 border-t-2 border-gray-700 py-8">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-      <div class="mb-8 md:mb-0">
-        <div class="flex items-center justify-center md:justify-start mb-4">
-          <img
-            id="footer-logo"
-            src="{{baseUrl}}{{#if brandLogo}}{{brandLogo}}{{else}}images/favicon.svg{{/if}}"
-            alt="{{#if brandName}}{{brandName}}{{else}}Bento PDF{{/if}} Logo"
-            class="h-10 w-10 mr-3"
-          />
-          <span id="footer-brand" class="text-xl font-bold text-white">{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</span>
-        </div>
-        <p id="footer-copyright" class="text-gray-400 text-sm" {{#unless footerText}}data-i18n="footer.copyright"{{/unless}}>
-          {{#if footerText}}{{footerText}}{{else}}&copy; 2026 BentoPDF. All rights reserved.{{/if}}
-        </p>
-        <p class="text-gray-400 text-xs mt-2">
-          <span data-i18n="footer.version">Version</span>
-          <span id="app-version">{{appVersion}}</span>
-        </p>
-        <p class="text-gray-400 text-sm mt-3">
-          Made by the team behind
-          <a
-            href="https://sproutsheets.com"
-            class="text-indigo-400 hover:underline"
-            target="_blank"
-            rel="noopener"
-            >SproutSheets</a
-          >, free printable worksheets for teachers.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-white mb-4" data-i18n="footer.company">
-          Company
-        </h3>
-        <ul class="space-y-2 text-gray-400">
-          <li>
-            <a
-              href="about.html"
-              class="hover:text-indigo-400"
-              data-i18n="footer.aboutUs"
-              >About Us</a
-            >
-          </li>
-          <li>
-            <a
-              href="faq.html"
-              class="hover:text-indigo-400"
-              data-i18n="footer.faqLink"
-              >FAQ</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact.html"
-              class="hover:text-indigo-400"
-              data-i18n="footer.contactUs"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-white mb-4" data-i18n="footer.legal">
-          Legal
-        </h3>
-        <ul class="space-y-2 text-gray-400">
-          <li>
-            <a
-              href="licensing.html"
-              class="hover:text-indigo-400"
-              data-i18n="nav.licensing"
-              >Licensing</a
-            >
-          </li>
-          <li>
-            <a
-              href="terms.html"
-              class="hover:text-indigo-400"
-              data-i18n="footer.termsAndConditions"
-              >Terms and Conditions</a
-            >
-          </li>
-          <li>
-            <a
-              href="privacy.html"
-              class="hover:text-indigo-400"
-              data-i18n="footer.privacyPolicy"
-              >Privacy Policy</a
-            >
-          </li>
-          <li>
-            <a href="wasm-settings.html" class="hover:text-indigo-400"
-              >Advanced Settings</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-white mb-4">Source</h3>
-        <div class="flex justify-center md:justify-start space-x-4">
-          <a
-            href="{{baseUrl}}source.zip"
-            rel="noopener"
-            class="text-gray-400 hover:text-indigo-400 inline-flex items-center gap-2"
-            title="Download source code (AGPL-3.0)"
-          >
-            <i data-lucide="download"></i>
-            <span class="text-sm">Source code</span>
-          </a>
-        </div>
-        <p class="text-gray-500 text-xs mt-3">
-          Built on
-          <a
-            href="https://github.com/alam00000/bentopdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-indigo-400 underline"
-            >BentoPDF</a
-          >, open source under AGPL-3.0.
-        </p>
-      </div>
-    </div>
+<footer class="mt-16 border-t border-gray-800 py-8">
+  <div
+    class="container mx-auto px-4 flex flex-col items-center gap-3 text-center"
+  >
+    <nav
+      class="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-sm text-gray-400"
+    >
+      <a href="privacy.html" class="hover:text-indigo-400">Privacy</a>
+      <span class="text-gray-600">·</span>
+      <a href="terms.html" class="hover:text-indigo-400">Terms</a>
+      <span class="text-gray-600">·</span>
+      <a href="attribution.html" class="hover:text-indigo-400">Attribution</a>
+    </nav>
+    <p class="text-gray-500 text-sm">
+      Made by the team behind
+      <a
+        href="https://sproutsheets.com"
+        class="text-indigo-400 hover:underline"
+        target="_blank"
+        rel="noopener"
+        >SproutSheets</a
+      >.
+    </p>
   </div>
 </footer>
 {{/if}}

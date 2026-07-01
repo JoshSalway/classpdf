@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Attribution & Source Code - ClassPDF</title>
+    <meta
+      name="description"
+      content="ClassPDF is built on open-source software licensed under AGPL-3.0. Download the source code for the version running on this site."
+    />
+    <meta name="author" content="ClassPDF" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://classpdf.com/attribution" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://classpdf.com/attribution" />
+    <meta property="og:title" content="Attribution & Source Code - ClassPDF" />
+    <meta property="og:site_name" content="ClassPDF" />
+
+    <link href="/src/css/styles.css" rel="stylesheet" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/favicon-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+
+  <body class="antialiased bg-gray-900 text-gray-300">
+    {{> navbar }}
+
+    <div id="app" class="min-h-screen container mx-auto p-4 md:p-8">
+      <section class="max-w-2xl mx-auto py-16">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Attribution &amp; source code
+        </h1>
+
+        <p class="text-lg text-gray-400 leading-relaxed mb-6">
+          ClassPDF is built on
+          <a
+            href="https://github.com/alam00000/bentopdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo-400 hover:underline"
+            >BentoPDF</a
+          >, open-source software licensed under the
+          <a
+            href="https://www.gnu.org/licenses/agpl-3.0.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo-400 hover:underline"
+            >GNU Affero General Public License v3.0 (AGPL-3.0)</a
+          >. All PDF tools run entirely in your browser; your files never leave
+          your device.
+        </p>
+
+        <p class="text-lg text-gray-400 leading-relaxed mb-8">
+          In keeping with the AGPL, the complete Corresponding Source for the
+          exact version of ClassPDF running on this site is available to
+          download below.
+        </p>
+
+        <a
+          href="/source.zip"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-colors"
+        >
+          <i data-lucide="download" class="w-5 h-5"></i>
+          Download source code
+        </a>
+
+        <p class="text-sm text-gray-500 mt-8">
+          The license text is included in the download as
+          <code class="text-gray-400">LICENSE</code>. Upstream copyright and
+          attribution are preserved.
+        </p>
+      </section>
+    </div>
+
+    {{> footer }}
+
+    <script type="module" src="src/js/utils/lucide-init.ts"></script>
+    <script type="module" src="src/js/mobileMenu.ts"></script>
+  </body>
+</html>
