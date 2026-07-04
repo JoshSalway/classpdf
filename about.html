@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Sentry browser error tracking (self-hosted at sentry.joshsalway.com) -->
+    <script
+      src="https://browser.sentry-cdn.com/8.55.0/bundle.tracing.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Sentry.init({
+        dsn: 'https://350dc8b95e36d853bfc2b3379fe19c92@sentry.joshsalway.com/14',
+        tracesSampleRate: 0.1,
+      });
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>About ClassPDF - Free PDF Tools for Teachers</title>
