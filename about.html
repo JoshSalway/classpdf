@@ -2,12 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Sentry browser error tracking (self-hosted at sentry.joshsalway.com) -->
+    <script
+      src="https://browser.sentry-cdn.com/8.55.0/bundle.tracing.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Sentry.init({
+        dsn: 'https://350dc8b95e36d853bfc2b3379fe19c92@sentry.joshsalway.com/14',
+        tracesSampleRate: 0.1,
+      });
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>About ClassPDF - Free PDF Tools for Teachers</title>
     <meta
       name="description"
-      content="ClassPDF gives teachers free PDF tools that run right in the browser - merge, split, compress and convert. Files never leave your device. Brought to you by the SproutSheets team."
+      content="ClassPDF gives teachers free PDF tools that run right in the browser - merge, split, compress and convert. Files never leave your device. Brought to you by the ChalkBee team."
     />
     <meta name="author" content="ClassPDF" />
     <meta name="robots" content="index, follow" />
@@ -63,11 +75,11 @@
         <p class="text-lg text-slate-600 leading-relaxed">
           Brought to you by the
           <a
-            href="https://sproutsheets.com"
+            href="https://chalkbee.com"
             target="_blank"
             rel="noopener"
             class="text-green-600 hover:underline"
-            >SproutSheets</a
+            >ChalkBee</a
           >
           team.
         </p>

@@ -47,12 +47,22 @@ const corsProxyOrigin =
 const ocrFontOrigin =
   originOf(process.env.VITE_OCR_FONT_BASE_URL) || DEFAULT_OCR_FONT_CDN_ORIGIN;
 
-const scriptOrigins = uniq([...wasmOrigins, ...tesseractOrigins]);
+// Sentry (self-hosted) browser error tracking: SDK is loaded from the public
+// Sentry CDN, and events are sent to the self-hosted ingest host.
+const SENTRY_CDN_ORIGIN = 'https://browser.sentry-cdn.com';
+const SENTRY_INGEST_ORIGIN = 'https://sentry.joshsalway.com';
+
+const scriptOrigins = uniq([
+  ...wasmOrigins,
+  ...tesseractOrigins,
+  SENTRY_CDN_ORIGIN,
+]);
 const connectOrigins = uniq([
   ...wasmOrigins,
   ...tesseractOrigins,
   corsProxyOrigin,
   ocrFontOrigin,
+  SENTRY_INGEST_ORIGIN,
 ]);
 const fontOrigins = uniq([ocrFontOrigin].filter(Boolean));
 

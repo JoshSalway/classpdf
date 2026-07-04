@@ -55,8 +55,8 @@ in that script.)
 
 ## Cross-promo
 
-A single honest footer link points to https://sproutsheets.com ("Made by the
-team behind SproutSheets, free printable worksheets for teachers.").
+A single honest footer link points to https://chalkbee.com ("Made by the
+team behind ChalkBee, free printable worksheets for teachers.").
 
 ## Deploy to Cloudflare Pages
 
