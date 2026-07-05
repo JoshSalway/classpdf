@@ -4,7 +4,7 @@ Free, private, in-browser PDF tools for teachers — merge, split, compress and
 convert PDFs. Everything runs client-side, so your files never leave your
 device.
 
-Live: https://classpdf-2iu.pages.dev
+Live: https://classpdf.com
 
 ## Run locally
 
