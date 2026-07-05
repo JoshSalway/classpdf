@@ -1,0 +1,58 @@
+name: Claude auto-fix
+
+# Two ways to trigger Claude:
+#  1. A Sentry error auto-creates an issue labelled "sentry" (via the
+#     Sentry -> GitHub Worker) -> Claude drafts a fix PR automatically.
+#  2. Anyone types "@claude" in an issue / PR comment -> Claude responds.
+# Auth is the Max SUBSCRIPTION token (CLAUDE_CODE_OAUTH_TOKEN), not metered API.
+# Claude opens a DRAFT PR for review; it never merges on its own.
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+concurrency:
+  group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    # Only run for the Sentry label, or an explicit @claude mention.
+    if: |
+      (github.event_name == 'issues' && github.event.label.name == 'sentry') ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Only used for the automated (label) path; @claude comments carry
+          # their own instruction from the comment body.
+          prompt: |
+            A Sentry production error was reported and filed as this GitHub issue.
+            1. Read the issue body: error message, culprit/file, stack, release, device.
+            2. Locate the responsible code in this repo and determine the root cause.
+            3. Implement the MINIMAL, safe fix (guard the failure, degrade gracefully;
+               do not refactor unrelated code).
+            4. Open a DRAFT pull request that closes this issue, with a short
+               root-cause + fix explanation. Do NOT merge.
+            If you cannot confidently reproduce or locate the cause, comment your
+            findings on the issue instead of guessing.
+          # Keep runs cheap: Sonnet (the alias tracks the current Sonnet).
+          claude_args: "--model sonnet"
