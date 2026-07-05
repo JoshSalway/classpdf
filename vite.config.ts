@@ -589,6 +589,27 @@ export default defineConfig(() => {
           'merge-pdf': resolve(__dirname, 'src/pages/merge-pdf.html'),
           'split-pdf': resolve(__dirname, 'src/pages/split-pdf.html'),
           'compress-pdf': resolve(__dirname, 'src/pages/compress-pdf.html'),
+          // Teacher SEO landing pages
+          'compress-pdf-for-google-classroom': resolve(
+            __dirname,
+            'src/pages/compress-pdf-for-google-classroom.html'
+          ),
+          'compress-pdf-for-canvas': resolve(
+            __dirname,
+            'src/pages/compress-pdf-for-canvas.html'
+          ),
+          'combine-worksheets-into-one-pdf': resolve(
+            __dirname,
+            'src/pages/combine-worksheets-into-one-pdf.html'
+          ),
+          'merge-pdfs-for-sub-plans': resolve(
+            __dirname,
+            'src/pages/merge-pdfs-for-sub-plans.html'
+          ),
+          'split-scanned-test-into-pages': resolve(
+            __dirname,
+            'src/pages/split-scanned-test-into-pages.html'
+          ),
           'edit-pdf': resolve(__dirname, 'src/pages/edit-pdf.html'),
           'jpg-to-pdf': resolve(__dirname, 'src/pages/jpg-to-pdf.html'),
           'sign-pdf': resolve(__dirname, 'src/pages/sign-pdf.html'),
