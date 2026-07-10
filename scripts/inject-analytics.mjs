@@ -14,7 +14,7 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const distDir = join(repoRoot, 'dist');
 
 // One obvious place for Josh to paste his GA4 Measurement ID.
-const DEFAULT_ID = 'G-XXXXXXXXXX';
+const DEFAULT_ID = 'G-KCJP827K0J';
 const GA_ID = process.env.GA_MEASUREMENT_ID || DEFAULT_ID;
 
 const MARKER = 'window.GA_MEASUREMENT_ID';
@@ -67,4 +67,6 @@ for (const file of walk(distDir)) {
 }
 
 const state = GA_ID.startsWith('G-XXXX') ? 'placeholder (no-op)' : GA_ID;
-console.log(`[analytics] GA id: ${state} - injected ${injected}, already present ${skipped}`);
+console.log(
+  `[analytics] GA id: ${state} - injected ${injected}, already present ${skipped}`
+);
