@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
 
+    {{> ga }}
+
     <!-- Sentry browser error tracking (self-hosted at sentry.joshsalway.com) -->
     <script
       src="https://browser.sentry-cdn.com/8.55.0/bundle.tracing.min.js"
@@ -90,7 +92,9 @@
           and never identifies you personally.
         </p>
 
-        <h2 class="text-xl font-bold text-slate-900 mt-10 mb-3">Error monitoring</h2>
+        <h2 class="text-xl font-bold text-slate-900 mt-10 mb-3">
+          Error monitoring
+        </h2>
         <p class="text-lg text-slate-600 leading-relaxed mb-6">
           To catch and fix bugs, we use self-hosted error monitoring (Sentry,
           running on our own servers, not a third party). If something goes
