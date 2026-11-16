@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
     groups:
       npm-dependencies:
         patterns:
@@ -12,9 +12,17 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
 
   - package-ecosystem: 'docker'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
+    groups:
+      docker:
+        patterns:
+          - '*'
